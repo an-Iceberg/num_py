@@ -1,5 +1,5 @@
-from num import d, d2
 from math import sin, cos, pi as π
+from derivative import d, d2
 
 
 def f(x):

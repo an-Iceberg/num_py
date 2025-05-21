@@ -1,20 +1,5 @@
 from math import sin, cos, pi as π
-from copy import deepcopy
-
-
-def partial(f, x_input, i, h=0.001):
-    x_local = deepcopy(x_input)
-
-    def x(h):
-        x_local[i] = x_input[i]
-        x_local[i] += h
-        return x_local
-
-    return (f(x(-2 * h)) - 8 * f(x(-h)) + 8 * f(x(h)) - f(x(2 * h))) / (12 * h)
-
-
-def partial2(f, x, i, h=0.001):
-    return partial(lambda x: partial(f, x, i, h), x, i, h)
+from partial import partial, partial2
 
 
 def f(input):

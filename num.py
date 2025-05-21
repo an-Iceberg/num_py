@@ -16,16 +16,7 @@ def d(
     x: float,
     h: float = 0.001,
 ) -> float:
-    """Calculates first order derivative of `f` at `x` with precision `h`.
-
-    Args:
-        `f` : The function for which we want to calculated the derivative.
-        `x` : The point on the x axis for which the derivative should be calculated.
-        `h` : Precision
-
-    Returns:
-        float: `f'(x)`
-    """
+    """Calculates first order derivative of `f` at `x` with precision `h`."""
     return (f(x - 2 * h) - 8 * f(x - h) + 8 * f(x + h) - f(x + 2 * h)) / (12 * h)
 
 
@@ -34,16 +25,7 @@ def d2(
     x: float,
     h: float = 0.001,
 ) -> float:
-    """Calculates second order derivative of `f` at `x` with precision `h`.
-
-    Args:
-        `f` : The function for which we want to calculated the derivative.
-        `x` : The point on the x axis for which the derivative should be calculated.
-        `h` : Precision
-
-    Returns:
-        float: `f'(x)`
-    """
+    """Calculates second order derivative of `f` at `x` with precision `h`."""
     return d(lambda x: d(f, x, h), x, h)
     # return (f(x + h) - 2 * f(x) + f(x - h)) / h**2
 
