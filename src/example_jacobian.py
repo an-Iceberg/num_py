@@ -1,6 +1,5 @@
 from jacobian import D
 from math import exp, log
-
 import numpy as np
 
 

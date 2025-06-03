@@ -1,6 +1,6 @@
 import num
 import math
-from num import Vector
+from examples.num import Vector
 
 
 def f1(x: Vector) -> float:

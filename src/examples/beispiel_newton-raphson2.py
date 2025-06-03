@@ -1,6 +1,6 @@
 import num
 import math
-from num import Vector
+from examples.num import Vector
 
 # Beispiel Aufgabe 5.3 aus dem Skript
 

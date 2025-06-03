@@ -17,6 +17,10 @@ def D(
         i: int,
         h: float = 0.001,
     ) -> Vector:
+        """
+        This internal function extracts the partial derivative for a single dimension from all
+        functions.
+        """
         a, b, c, d = deepcopy(x), deepcopy(x), deepcopy(x), deepcopy(x)
         a[i] -= 2 * h
         b[i] -= h

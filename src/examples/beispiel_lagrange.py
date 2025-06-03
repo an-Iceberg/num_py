@@ -1,6 +1,6 @@
 from typing import List
 import num
-from num import Vector
+from examples.num import Vector
 import matplotlib.pyplot as plt
 import numpy as np
 

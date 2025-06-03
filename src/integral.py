@@ -1,7 +1,12 @@
 from typing import Callable
 
 
-def int_2(a: float, b: float, f: Callable[[float], float], h: float = 1e-2) -> float:
+def int_2(
+    a: float,
+    b: float,
+    f: Callable[[float], float],
+    h: float = 1e-2,
+) -> float:
     """
     Calculates the integral of `f` between `a` and `b` using
     [Simpson's ⅓ rule](https://en.wikipedia.org/wiki/Simpson%27s_rule#Composite_Simpson's_1/3_rule)
@@ -18,7 +23,12 @@ def int_2(a: float, b: float, f: Callable[[float], float], h: float = 1e-2) -> f
 
 
 # Note: this doesn't seem to work precisely and i don't know why :sob:
-def int_3(a: float, b: float, f: Callable[[float], float], h: float = 1e-2) -> float:
+def int_3(
+    a: float,
+    b: float,
+    f: Callable[[float], float],
+    h: float = 1e-2,
+) -> float:
     """
     Calculates the integral of `f` between `a` and `b` using
     [Simpson's ⅜ rule](https://en.wikipedia.org/wiki/Simpson%27s_rule#Composite_Simpson's_3/8_rule)
@@ -34,7 +44,12 @@ def int_3(a: float, b: float, f: Callable[[float], float], h: float = 1e-2) -> f
     # fmt: on
 
 
-def int_4(a: float, b: float, f: Callable[[float], float], h: float = 1e-2) -> float:
+def int_4(
+    a: float,
+    b: float,
+    f: Callable[[float], float],
+    h: float = 1e-2,
+) -> float:
     """
     Calculates the integral of `f` between `a` and `b` using
     [Boole's rule](https://en.wikipedia.org/wiki/Finite_difference_coefficient)

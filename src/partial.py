@@ -1,7 +1,6 @@
 from copy import deepcopy
 from typing import List, Callable
 
-
 type Vector = List[float]
 
 

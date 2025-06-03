@@ -2,7 +2,7 @@ import num
 import sympy as sp
 import math
 import numpy as np
-from num import Vector
+from examples.num import Vector
 
 sp.init_printing()
 
