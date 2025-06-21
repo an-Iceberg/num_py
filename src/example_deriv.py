@@ -16,5 +16,5 @@ def d2_f(x):
 
 x = π
 
-print(f"d ε = {abs(d_f(x) - d(f, x)):.2e}")
+print(f"d  ε = {abs(d_f(x) - d(f, x)):.2e}")
 print(f"d2 ε = {abs(d2_f(x) - d2(f, x)):.2e}")
