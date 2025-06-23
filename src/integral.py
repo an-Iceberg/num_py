@@ -63,3 +63,25 @@ def int_4(
     # fmt: off
     return (2/45) * h * sum(7*f(x(4*i - 4)) + 32*f(x(4*i - 3)) + 12*f(x(4*i - 2)) + 32*f(x(4*i - 1)) + 7*f(x(4*i)) for i in range(1, int(n/4) + 1))
     # fmt: on
+
+
+# Note: this doesn't seem to work precisely and i don't know why :sob:
+def int_6(
+    a: float,
+    b: float,
+    f: Callable[[float], float],
+    h: float = 1e-2,
+) -> float:
+    """
+    Calculates the integral of `f` between `a` and `b` using
+    [Weddle's rule](https://mathworld.wolfram.com/WeddlesRule.html)
+    , so using polynomials of 4ᵗʰ degree.
+    """
+    n = (b - a) / h
+
+    def x(i: float) -> float:
+        return a + (i * h)
+
+    # fmt: off
+    return (3/10) * h * sum([f(x(6*i-6)) + 5*f(x(6*i-5)) + f(x(6*i-4)) + 6*f(x(6*i-3)) + f(x(6*i-2)) + 5*f(x(6*i-1)) + f(x(6*i)) for i in range(1, int(n/6) + 1)])
+    # fmt: on
