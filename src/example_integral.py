@@ -17,8 +17,9 @@ print(f"Simpson's ⅓: ε = {abs(int_2(a, b, f) - (F(b) - F(a))):.2e}")
 print(f"Simpson's ⅜: ε = {abs(int_3(a, b, f) - (F(b) - F(a))):.2e}")
 print(f"Boole's :    ε = {abs(int_4(a, b, f) - (F(b) - F(a))):.2e}")
 print(f"Weddle's :   ε = {abs(int_6(a, b, f) - (F(b) - F(a))):.2e}")
+print(f"{abs(int_6(4.98, 5.0, f) - (F(5.0) - F(4.98))):.2e}")
 
-# Why is Simpson's 1/3 & Weddle's so imprecise? :( What did i do wrong? :(
+# Why is Simpson's 3/8 & Weddle's so imprecise? :( What did i do wrong? :(
 """
 Output:
 Simpson's ⅓: ε = 5.33e-11
