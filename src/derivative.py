@@ -6,7 +6,7 @@ def d(
     x: float,
     h: float = 0.001,
 ) -> float:
-    """Calculates first order derivative of `f` at `x` with precision `h`."""
+    """Calculates first order derivative of `f` at `x` with precision `h` using the [5 point stencil](https://en.wikipedia.org/wiki/Five-point_stencil) (the middle point is multiplied by a factor of 0 so it's effectively a 4 point stencil). """
     return (f(x - 2 * h) - 8 * f(x - h) + 8 * f(x + h) - f(x + 2 * h)) / (12 * h)
 
 
@@ -17,3 +17,21 @@ def d2(
 ) -> float:
     """Calculates second order derivative of `f` at `x` with precision `h`."""
     return d(lambda x: d(f, x, h), x, h)
+
+
+def d3(
+    f: Callable[[float], float],
+    x: float,
+    h: float = 0.001,
+) -> float:
+    """Calculates second order derivative of `f` at `x` with precision `h`."""
+    return d(lambda x: d2(f, x, h), x, h)
+
+
+def d4(
+    f: Callable[[float], float],
+    x: float,
+    h: float = 0.001,
+) -> float:
+    """Calculates second order derivative of `f` at `x` with precision `h`."""
+    return d(lambda x: d3(f, x, h), x, h)
