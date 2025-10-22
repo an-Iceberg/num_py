@@ -1,4 +1,4 @@
-from jacobian import D
+from jacobi import D
 from math import exp, log
 import numpy as np
 
@@ -18,12 +18,7 @@ def f3(x):
     return (y - 3) ** 2 - z**3 + 7
 
 
-def f(λ):
-    return [
-        f1(λ),
-        f2(λ),
-        f3(λ),
-    ]
+f = [f1, f2, f3]
 
 
 x = [1.5, 3, 2.5]

@@ -39,18 +39,14 @@ def int_3(
     def x(i: float) -> float:
         return a + (i * h)
 
-    print(f"  {n = }")
-
     n -= n % 3
-
-    print(f"  {n = }")
 
     last_point = x(n)
     # This doesn't compute the last segment, presumably b/c it's too small
-    last_segment = int_2(last_point, b, f, h)
+    last_segment = int_2(last_point, b, f, h / 2)
 
-    print(f"    {last_point = }")
-    print(f"  {last_segment = }")
+    # print(f"    {last_point = }")
+    # print(f"  {last_segment = }")
 
     # fmt: off
     return (3/8) * h * sum(f(x(3*i-3)) + 3*f(x(3*i-2)) + 3*f(x(3*i-1)) + f(x(3*i)) for i in range(1, int(n/3) + 1)) + last_segment
@@ -98,7 +94,7 @@ def int_6(
     n -= n % 6
 
     last_point = x(n)
-    last_segment = int_4(last_point, b, f, h)
+    last_segment = int_4(last_point, b, f, h / 2)
 
     # fmt: off
     return (3/10) * h * sum([f(x(6*i-6)) + 5*f(x(6*i-5)) + f(x(6*i-4)) + 6*f(x(6*i-3)) + f(x(6*i-2)) + 5*f(x(6*i-1)) + f(x(6*i)) for i in range(1, int(n/6) + 1)]) + last_segment
