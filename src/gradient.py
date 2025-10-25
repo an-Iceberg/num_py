@@ -1,4 +1,3 @@
-from copy import deepcopy
 from typing import List, Callable
 from partial import partial
 
@@ -10,7 +9,7 @@ def gradient(
     f: Callable[[Vector], float],
     x: Vector,
     h: float = 0.001,
-):
+) -> list[float]:
     return [partial(f, x, i) for i, _ in enumerate(x)]
 
 
