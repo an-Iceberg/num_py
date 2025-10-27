@@ -1,4 +1,5 @@
-from math import gcd
+from gcd import gcd
+from pow_mod import pow_mod
 from random import randint
 
 
@@ -6,7 +7,7 @@ def fermat_test(number: int, a: int) -> bool:
     """
     If this returns `True` then there's a 50% chance that `number` is prime.
     """
-    return gcd(number, a) == 1 and a ** (number - 1) % number == 1
+    return gcd(number, a) == 1 and pow_mod(a, number - 1, number) == 1
 
 
 def is_prime_naive(n: int) -> bool:
@@ -29,10 +30,6 @@ def is_prime_fermat(number: int, iter_count: int = 15):
 
     for _ in range(iter_count):
         a = randint(2, number - 2)
-        # Choosing a number that is co-prime to `number` b/c otherwise we're wasting computational
-        # effort and we wouldn't use our `iter_count` iterations to actually verify that `number`
-        # is prime
-        # This might cause an infinite loop?
         if not fermat_test(number, a):
             return False
 
