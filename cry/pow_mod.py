@@ -18,7 +18,7 @@ def bits(n: int) -> list[int]:
     return bits
 
 
-def exponent_f(factor: int) -> int:
+def log2(factor: int) -> int:
     """From the equation `factor = 2^x` this function calculates x and returns it.
 
     # ⚠️ Assumption:
@@ -35,7 +35,7 @@ def pow_mod(base: int, exponent: int, modulus: int):
     """Calculates a^b mod m"""
     result = 1
     block_result = base
-    exponents = [exponent_f(b) for b in bits(exponent)]
+    exponents = [log2(b) for b in bits(exponent)]
     # We don't need to iterate thru k_1 - k_i in order to reach k_i+1,
     # so we skip those previous calculations with this
     previous_k = 0

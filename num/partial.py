@@ -13,7 +13,7 @@ def partial(
     x_vec = deepcopy(x)
     x_val = x_vec[i]
 
-    def x(h):
+    def x(h: float) -> list[float]:
         x_vec[i] = x_val
         x_vec[i] += h
         return x_vec
